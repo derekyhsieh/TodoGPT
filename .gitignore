@@ -52,8 +52,10 @@ xcuserdata/
 ## Xcode 8 and earlier
 *.xcscmblueprint
 *.xccheckout
+**/ios/Runner/GoogleService-Info.plist
 
 ### Xcode Patch ###
+#
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
