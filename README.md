@@ -1,17 +1,15 @@
-# SwiftUI Firebase Authentication Tutorial
+# TodoGPT - SwiftUI TodoList powered by ChatGPT
 
-This repository contains the source code for the SwiftUI Firebase Authentication YouTube tutorial. In the tutorial, you'll learn how to set up Firebase for beginners, implement email and password authentication, and create a persisted login using SwiftUI.
+Welcome to the TodoGPT repository! This is the source code for the SwiftUI TodoList app that is fully powered by OpenAI's ChatGPT. This project is based on a step-by-step tutorial that demonstrates how to create a conversational AI-powered TodoList app using SwiftUI and OpenAI's ChatGPT.
 
-[![SwiftUI Firebase Authentication YouTube Tutorial](https://img.youtube.com/vi/OTg_yZp3T34/0.jpg)](https://youtu.be/OTg_yZp3T34)
+[![How to make a SwiftUI TodoList fully powered by ChatGPT](https://img.youtube.com/vi/fW1gieNFdac/0.jpg)](https://youtu.be/fW1gieNFdac)
 
-## What you'll learn
+## Features
+- Create tasks using natural language input
+- AI-powered understanding of your commands and queries
+- Interactive and user-friendly interface built using SwiftUI
 
-- Setting up Firebase for your SwiftUI project
-- Creating email and password authentication
-- Implementing a persisted login system
-
-## Prerequisites
-
-- Basic understanding of SwiftUI
-- Xcode 12+ and a macOS device running macOS Big Sur or later
-- [Firebase account](https://firebase.google.com/)
+## Requirements
+- Xcode 13+
+- iOS 15+
+- OpenAI API key
