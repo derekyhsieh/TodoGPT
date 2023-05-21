@@ -10,14 +10,20 @@ import SwiftUI
 struct ChatView: View {
     
     @State private var typingMessage: String = ""
+    @StateObject var chatModel: ChatHelper
     
-    private let dummyMessages: [MessageData] = [
-        MessageData(content: "Hello world", user: .system),
-        MessageData(content: "I'm doing great", user: .user),
-        MessageData(content: "Thats great to hear", user: .system),
-        MessageData(content: "Can you help me with my todolist", user: .user),
-        MessageData(content: "LOADING", user: .system),
-    ]
+    
+    func sendMessage() {
+        let newMessage = MessageData(content: typingMessage, user: .user)
+        
+        chatModel.sendMessage(newMessage)
+        
+        self.typingMessage = ""
+        
+        Task {
+            await chatModel.getAIResponse()
+        }
+    }
     
     
     var body: some View {
@@ -26,7 +32,7 @@ struct ChatView: View {
             
             ScrollView {
                 
-                ForEach(dummyMessages, id: \.self) { message in
+                ForEach(chatModel.messages, id: \.self) { message in
                     
                     MessageView(message: message)
                     
@@ -40,7 +46,10 @@ struct ChatView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(minHeight: CGFloat(30))
                 
-                Button(action: {}) {
+                Button(action: {
+                    
+                    sendMessage()
+                }) {
                     Text("Send")
                 }
             }.frame(minHeight: 50).padding()
@@ -48,9 +57,9 @@ struct ChatView: View {
         }
     }
 }
-
-struct ChatView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatView()
-    }
-}
+//
+//struct ChatView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChatView()
+//    }
+//}

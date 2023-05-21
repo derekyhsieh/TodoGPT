@@ -11,6 +11,9 @@ struct HomeView: View {
     
     @State private var isChatOpen: Bool = true
     
+    @StateObject var chatModel = ChatHelper()
+    
+    
     @State var dummyTodoData: [String] = ["eat lunch", "read before bed", "study for finals"]
     
     
@@ -33,7 +36,7 @@ struct HomeView: View {
             Spacer()
             
             if isChatOpen {
-                ChatView()
+                ChatView(chatModel: chatModel)
                 
             } else {
                 
